@@ -69,8 +69,12 @@ Comments
 	parent_type - TEXT
 
 
+
+
 Advanced
-Users have many Orders
+Users to Orders one to many
+Orders to Products many to many
+Shipments to Orders one to many
 
 
 Users
@@ -78,8 +82,39 @@ Users
 	f_name - VARCHAR(64)
 	l_name - VARCHAR(64)
 
+Address
+	id - INT PK 
+	user_id - INT FK
+	street_name - VARCHAR(64)
+	street_number - TINYINT
+	apartment_number
+	city_id - INT FK
+	state_id - INT FK
+	country_id - INT FK
+	zip_id - INT FK	
+
 Products
+	id - INT PK
+	name - VARCHAR(64)
+	price - DECIMAL
+	stock - INTEGER
+
+	OrderProducts
+		id - INT PK
+		quantity - INTEGER
+		product_id - INT FK
+		order_id - INT FK
+		
 
 Orders
+	id - INT PK
+	user_id - INT FK
+	shipment_id - INT FK
+
 
 Shipments
+	id - INT PK
+
+
+
+
