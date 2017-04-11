@@ -53,15 +53,33 @@ Country
 INTERMEDIATE:
 
 Users
-
+	id - INT PK
+	name - VARCHAR(64)
 
 Links
-
+	id - INT PK
+	link - VARCHAR(64)
+	user_id - INT FK
 
 Comments
+	id - INT PK
+	user_id - INT FK
+	body - VARCHAR(255)
+	parent__id - INT FK
+	parent_type - TEXT
 
 
+Advanced
+Users have many Orders
 
 
+Users
+	id - INT PK
+	f_name - VARCHAR(64)
+	l_name - VARCHAR(64)
 
+Products
 
+Orders
+
+Shipments
